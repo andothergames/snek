@@ -48,6 +48,14 @@ function update() {
         placeFood()
     }
 
+    for (let i = snakeBody.length-1; i > 0; i--) {
+        snakeBody[i] = snakeBody[i - 1];
+    }
+
+    if (snakeBody.length) {
+        snakeBody[0] = [snakeX, snakeY];
+    }
+
     //snake
     context.fillStyle="aquamarine";
     snakeX += velocityX * blockSize;
